@@ -8,7 +8,7 @@ const { connectToDB } = require('../connect');
 router.get('/', async (req, res) => {
   try {
     const collection = await connectToDB('TUITION', 'TEACHER');
-    const documents = await collection.find().toArray();
+    const documents = await collection.find().sort({ lastModified: -1 }).toArray();
     res.send(documents);
   } catch (error) {
     console.error('Error fetching documents:', error);
