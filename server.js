@@ -21,7 +21,7 @@ app.use('/update', update);
 app.use('/delete', del);
 app.use('/blog', blog);
 
-const port = process.env.PORT;
+const port = process.env.PORT || 5001;
 app.listen(port, () => {
   console.log(`Server is running on ${port}`);
 });
