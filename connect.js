@@ -5,7 +5,7 @@ let client = null;
 async function connectToDB(databaseName, collectionName) {
   try {
     if (!client) {
-      client = new MongoClient("mongodb+srv://siyam:siyam@cluster0.n6bi6.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0", {
+      client = new MongoClient(process.env.URI, {
         useNewUrlParser: true,
         useUnifiedTopology: true,
         // Add any other valid options here
